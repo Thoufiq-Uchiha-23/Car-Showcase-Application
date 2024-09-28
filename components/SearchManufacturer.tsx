@@ -63,17 +63,13 @@ const SearchManufacturer = ({
                   key={item}
                   className={({ focus }) =>
                     `relative search-manufacturer__option ${
-                      focus
-                        ? "bg-primary-blue-100 text-white"
-                        : "text-gray-900"
+                      focus ? "bg-primary-blue-100 text-white" : "text-gray-900"
                     }`
                   }
                   value={item}
                 >
-                  {({selected, active}) => {
-                    <>
-                    
-                    </>
+                  {({ selected, active }) => {
+                    <></>;
                   }}
                 </ComboboxOption>
               ))}
