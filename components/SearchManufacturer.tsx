@@ -9,6 +9,7 @@ import {
   ComboboxInput,
   ComboboxOptions,
   ComboboxOption,
+  CheckIcon
 } from "@headlessui/react";
 import Image from "next/image";
 import { useState, Fragment } from "react";
@@ -17,6 +18,7 @@ const SearchManufacturer = ({
   manufacturer,
   setManufacturer,
 }: SearchManufacturerProps) => {
+  const [selectedPerson, setSelectedPerson] = useState([0])
   const [query, setQuery] = useState("");
 
   const filteredManufacturers =
@@ -58,19 +60,24 @@ const SearchManufacturer = ({
             afterLeave={() => setQuery("")}
           >
             <ComboboxOptions>
-              {filteredManufacturers.map((item) => (
+              {filteredManufacturers.map(() => (
                 <ComboboxOption
-                  key={item}
-                  className={({ focus }) =>
-                    `relative search-manufacturer__option ${
-                      focus ? "bg-primary-blue-100 text-white" : "text-gray-900"
-                    }`
-                  }
-                  value={item}
+                  as={Fragment}
+                  key={""}
+                  value={""}
+                  className="data-[focus]:bg-blue-100"
                 >
-                  {({ selected, active }) => {
-                    <></>;
-                  }}
+                  {({ focus, selected }) => (
+                    <div
+                      className={clsx(
+                        "group flex gap-2",
+                        focus && "bg-blue-100"
+                      )}
+                    >
+                      {selected && <CheckIcon className="size-5" />}
+                      {""}
+                    </div>
+                  )}
                 </ComboboxOption>
               ))}
             </ComboboxOptions>
