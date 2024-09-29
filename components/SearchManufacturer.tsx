@@ -65,7 +65,7 @@ const SearchManufacturer = ({
                   as={Fragment}
                   key={""}
                   value={""}
-                  className="data-[focus]:bg-blue-100"
+                  // className="data-[focus]:bg-blue-100"
                 >
                   {({ focus, selected }) => (
                     <div
