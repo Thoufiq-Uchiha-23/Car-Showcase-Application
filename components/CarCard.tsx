@@ -19,7 +19,7 @@ const CarCard = ({ car }: CarCardProps) => {
   return (
     <div className="car-car group">
       <div className="car-card__content">
-        <h2>
+        <h2 className="capitalize font-semibold text-base md:text-2xl ">
           {make} {model}
         </h2>
       </div>
