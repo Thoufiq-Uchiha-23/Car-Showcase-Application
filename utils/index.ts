@@ -1,5 +1,7 @@
 // import { HeartIcon } from "@heroicons/react/20/solid";
 
+import { CarProps } from "@/types";
+
 // const url = "https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=corolla";
 // const options = {
 //   method: "GET",
@@ -49,3 +51,7 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
 
   return rentalRatePerDay.toFixed(0);
 };
+
+export const generateCarImageUrl = (car: CarProps, angle?:string) => {
+  
+}
