@@ -52,6 +52,24 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
   return rentalRatePerDay.toFixed(0);
 };
 
-export const generateCarImageUrl = (car: CarProps, angle?:string) => {
-  
+const url = 'https://all-cars-names-image-and-variants-info.p.rapidapi.com/vehicles/Audi/audi_r8_coupe/Ibis_white.png';
+const options = {
+	method: 'GET',
+	headers: {
+		'x-rapidapi-key': '3c39d78115msh289d418388b62b0p156f23jsnf5d2761e5e68',
+		'x-rapidapi-host': 'all-cars-names-image-and-variants-info.p.rapidapi.com'
+	}
+};
+
+try {
+	const response = await fetch(url, options);
+	const result = await response.text();
+	console.log(result);
+} catch (error) {
+	console.error(error);
 }
+
+export const generateCarImageUrl = (car: CarProps, angle?: string) => {
+  // 093ts6hwg_ypo24fwtm_w9zmbsf1p
+  const url = new URL('https://api.carscan.com/v3.0/recall?vin=1GNALDEK9FZ108495')
+};
